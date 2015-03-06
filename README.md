@@ -22,6 +22,9 @@ Run it!
 
     rackup
 
+And go to
+
+    http://localhost:9292/hello
 
 That's it :)
 
