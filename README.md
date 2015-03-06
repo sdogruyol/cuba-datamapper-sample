@@ -12,15 +12,15 @@ in ***db_setup.rb***
 
 Clone this repo
 
-  git clone https://github.com/Sdogruyol/cuba-datamapper-sample
+    git clone https://github.com/Sdogruyol/cuba-datamapper-sample
 
 cd and bundle
 
-  cd cuba-datamapper-sample && bundle install
+    cd cuba-datamapper-sample && bundle install
 
 Run it!
 
-  rackup
+    rackup
 
 
 That's it :)
