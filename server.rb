@@ -12,7 +12,19 @@ Cuba.define do
       res.write(hello.to_json)
     end
 
-    on "new_user" do
+    on "users" do
+      @users = User.all
+      res.headers["Content-Type"] = "application/json; charset=utf-8"
+      res.write(@users.to_json)
+    end  
+
+    on root do
+      res.redirect "/hello"
+    end
+  end
+
+  on post do
+    on "users" do
       # create makes the resource immediately
       @user = User.create(
         email: 'dogruyolserdar@gmail.com',
@@ -22,10 +34,6 @@ Cuba.define do
       @user.save
       res.headers["Content-Type"] = "application/json; charset=utf-8"
       res.write(@user.to_json)
-    end
-
-    on root do
-      res.redirect "/hello"
     end
   end
 end

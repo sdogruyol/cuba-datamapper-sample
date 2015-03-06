@@ -8,6 +8,7 @@ class User
   property :id,         Serial    # An auto-increment integer key
   property :email,      String    # A varchar type string, for short strings
   property :created_at, DateTime  # A DateTime, for any date you might like.
+  property :updated_at, DateTime
 end
 
 DataMapper.finalize
