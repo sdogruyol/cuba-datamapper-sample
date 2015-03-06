@@ -7,6 +7,12 @@ Cuba.define do
 
   on get do
     on "hello" do
+      hello = {name: 'Serdar'}
+      res.headers["Content-Type"] = "application/json; charset=utf-8"
+      res.write(hello.to_json)
+    end
+
+    on "new_user" do
       # create makes the resource immediately
       @user = User.create(
         email: 'dogruyolserdar@gmail.com',
@@ -14,7 +20,6 @@ Cuba.define do
       )
 
       @user.save
-
       res.headers["Content-Type"] = "application/json; charset=utf-8"
       res.write(@user.to_json)
     end
